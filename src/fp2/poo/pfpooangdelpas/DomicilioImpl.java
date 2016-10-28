@@ -1,4 +1,4 @@
-package fp2.poo.pfpooXXX;
+package fp2.poo.pfpooangdelpas;
 
 /**
  * Created by Usuario on 28/10/2016.
