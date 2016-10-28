@@ -1,4 +1,4 @@
-package fp2.poo.utilidades;
+package fp2.poo.pfpooXXX;
 
 import fp2.poo.utilidades.Excepciones.TelefonoIncorrectoExcepcion;
 
