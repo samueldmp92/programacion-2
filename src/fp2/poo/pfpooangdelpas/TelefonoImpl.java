@@ -11,6 +11,13 @@ public class TelefonoImpl {
 
     public void setTelefono(String numeroDetelefono)
             throws TelefonoIncorrectoExcepcion {
-        this.telefonoStr = numeroDetelefono;
+        try {
+            if (numeroDetelefono == null) {//terminar de definir el metodo bien
+                throw TelefonoIncorrectoExcepcion;
+            }
+            this.telefonoStr = numeroDetelefono;
+        } catch (Exception TelefonoIncorreptoExcepcion) {
+        }
     }
+
 }
