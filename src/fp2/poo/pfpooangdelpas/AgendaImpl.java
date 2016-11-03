@@ -10,6 +10,7 @@ public class AgendaImpl {
     private ArrayList<ContactoInterfaz> listaContactos = null;
     private int numeroContactosUsados = 0;
     private telefonoImpl=tmpTelefono;
+    private boolean flag = 0;
 
     public Agenda(String archivo)
             throws NoSuchElementException, OperacionNoPermitidaExcepcion {
@@ -20,46 +21,65 @@ public class AgendaImpl {
             try {
                 ContactoInterfaz contacto = obj.next();
                 this.insertarContacto(contacto);
-                this.numeroContactosUsados = numeroContactosUsados + 1;
             } catch (OperacionNoPermitidaExcepcion e) {
+                system.err.println("OperacionNoPermitidaExcepcion");
+            }
 // Se ha producido un error en la lectura de un contacto
 // y se captura para seguir leyendo los demás contactos.
-            }
         }
-
-    public void insertarContacto(ContactoInterfaz contacto) throws OperacionNoPermitidaExcepcion {
-        this.listaContactos.add(contacto);
     }
 
-    public void modificarTelefono(TelefonoInterfaz telefonoAntiguo,
-                                  TelefonoInterfaz telefonoNuevo)
-            throws OperacionNoPermitidaExcepcion {
-        try {
-        this.tmpTelefono = telefonoNuevo.get;//terminar de definir bien el metodo
-            telefonoAntiguo.set(tmpTelefono);
-        telefonoAntiguo = telefonoNuevo;
-    } catch(Exception OperacionNoPermitidaExcepcion){
+    public void insertarContacto(ContactoInterfaz contacto) throws OperacionNoPermitidaExcepcion {
+        if (this.listaContactos.add(contacto)) {
+            this.numeroContactosUsados++;
+        } else {
+            throw OperacionNoPermitidaExcepcion;
+        }
     }
 
 }
 
+    public void modificarTelefono(TelefonoInterfaz telefonoAntiguo,
+                                  TelefonoInterfaz telefonoNuevo)
+            throws OperacionNoPermitidaExcepcion {
+        for (i = 0; i <= numeroContactosUsados; i++) {
+            if (this.listaContactos(i).getTelefono().getTelefono().equals(telefono.getTelefonoAntiguo())) {
+                this.flag = 1;
+            }
+            if (this.flag == 1) {
+                this.tmpTelefono = telefonoNuevo.get;//terminar de definir bien el metodo
+                telefonoAntiguo.set(tmpTelefono);
+                telefonoAntiguo = telefonoNuevo;
+            } else {
+                throw OperacionNoPermitidaExcepcion;
+            }
+        }
+    }
+
     public void eliminarContacto(TelefonoInterfaz telefono)
             throws OperacionNoPermitidaExcepcion {
-        try {
-            while (i <= numeroContactosUsados) {
-                if (this.listaContactos(i).telefono == telefono) {
-                    listaContactos(i) = null; //sera asi?
-                }
+
+        for (i = 0; i <= numeroContactosUsados; i++) {
+            if (this.listaContactos(i).getTelefono().getTelefono().equals(telefono.getTelefono())) {
+                listaContactos(i).remove(i);
+            } else {
+                throw OperacionNoPermitidaExcepcion;
             }
-        } catch (Exception OperacionNoPermitidaExcepcion) {
         }
 
     }
 
-    public void mostrarContactos() {
-        System.out.println("contactos"); //ponerlo bien mas adelante
-    }
 
+    public void mostrarContactos() {
+        for (i = 0; i <= numeroContactosUsados; i++) {
+            System.out.println(this.listaContactos(i).getTelefono().getTelefono());
+            System.out.println(this.listaContactos(i).getDomicilio().getDomicilio());
+            System.out.println(this.listaContactos(i).getPersona().getNombre());
+            System.out.println(this.listaContactos(i).getPersona().getPrimerApellido());
+            System.out.println(this.listaContactos(i).getPersona().getSegundoApellido());
+            System.out.println(this.listaContactos(i).getCorreoElectronico().getCorreoElectronico);
+        }
+    }
     public void ordenarContactos() {
 
     }

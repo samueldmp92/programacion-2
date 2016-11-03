@@ -24,7 +24,6 @@ public class ContactoImpl {
 
     public PersonaInterfaz getPersona() {
         return this.persona;
-
     }
 
     public void setPersona(PersonaInterfaz persona) {
