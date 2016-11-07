@@ -1,8 +1,9 @@
 package fp2.poo.pfpooangdelpas;
 
 import fp2.poo.utilidades.Excepciones.TelefonoIncorrectoExcepcion;
+import fp2.poo.utilidades.TelefonoInterfaz;
 
-public class TelefonoImpl {
+public class Telefono implements TelefonoInterfaz {
     private String telefonoStr;
 
     public String getTelefono() {

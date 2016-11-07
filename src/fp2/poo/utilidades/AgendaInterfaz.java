@@ -9,7 +9,8 @@
 package fp2.poo.utilidades;
 
 import fp2.poo.utilidades.ContactoInterfaz;
-import fp2.poo.utilidades.TelefonoInterfaz; 
+import fp2.poo.utilidades.Excepciones.TelefonoIncorrectoExcepcion;
+import fp2.poo.utilidades.TelefonoInterfaz;
 import fp2.poo.utilidades.Excepciones.OperacionNoPermitidaExcepcion;
 
 /**
@@ -43,7 +44,7 @@ public interface AgendaInterfaz {
      */
     public void modificarTelefono(TelefonoInterfaz telefonoAntiguo, 
                                   TelefonoInterfaz telefonoNuevo) 
-            throws OperacionNoPermitidaExcepcion;
+            throws OperacionNoPermitidaExcepcion, TelefonoIncorrectoExcepcion;
 
     /**
      *  Elimina un contacto de la agenda.
@@ -60,13 +61,13 @@ public interface AgendaInterfaz {
      *  El orden de salida de los datos es el siguiente:
      *  Numero de telefono, Nombre, Primer Apellido, Segundo Apellido, Domicilio y 
      *  Correo electronico.
-     *   Cada uno de estos datos debe ir en una l¡nea diferente.
-     *   No se inserta  ninguna informacion adicional a la especificada.
+     *   Cada uno de estos datos debe ir en una lï¿½nea diferente.
+     *   No se insertaï¿½ ninguna informacion adicional a la especificada.
      */
     public void mostrarContactos();
 
     /**
-     *  Ordena la lista de contactos de Agenda según el 
+     *  Ordena la lista de contactos de Agenda segï¿½n el 
      *  el primerApellido, segundoApellido y nombre.
      *  
      */

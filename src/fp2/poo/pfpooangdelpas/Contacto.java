@@ -1,14 +1,18 @@
 package fp2.poo.pfpooangdelpas;
 
-import fp2.poo.utilidades.CorreoElectronicoInterfaz;
-import fp2.poo.utilidades.DomicilioInterfaz;
-import fp2.poo.utilidades.PersonaInterfaz;
-import fp2.poo.utilidades.TelefonoInterfaz;
+import fp2.poo.pfpooangdelpas.Agenda;
+import fp2.poo.pfpooangdelpas.Contacto;
+import fp2.poo.pfpooangdelpas.Domicilio;
+import fp2.poo.pfpooangdelpas.CorreoElectronico;
+import fp2.poo.pfpooangdelpas.Persona;
+import fp2.poo.pfpooangdelpas.Telefono;
+import fp2.poo.utilidades.*;
+
 
 /**
  * Created by Usuario on 28/10/2016.
  */
-public class ContactoImpl {
+public class Contacto implements ContactoInterfaz {
     private TelefonoInterfaz telefono;
     private PersonaInterfaz persona;
     private DomicilioInterfaz domicilio;

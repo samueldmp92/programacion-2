@@ -1,8 +1,9 @@
 package fp2.poo.pfpooangdelpas;
 
+import fp2.poo.utilidades.CorreoElectronicoInterfaz;
 import fp2.poo.utilidades.Excepciones.CorreoElectronicoIncorrectoExcepcion;
 
-public class CorreoElectronicoImpl {
+public class CorreoElectronico implements CorreoElectronicoInterfaz {
     private String correoElectronicoStr;
 
     public void setCorreoElectronico(String correoElectronico)
