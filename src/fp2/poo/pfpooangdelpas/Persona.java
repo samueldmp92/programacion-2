@@ -1,7 +1,7 @@
 package fp2.poo.pfpooangdelpas;
 
 
-public class PersonalImpl {
+public class Persona implements PersonaInterfaz {
     private String nombreStr;
     private String primerApellidoStr;
     private String segundoApellidoStr;
